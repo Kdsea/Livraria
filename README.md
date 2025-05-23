@@ -1,1 +1,1 @@
-"# Livraria" 
+Repositório com código em Python de um script para uma livraria onde se pode cadastrar, remover e consultar livros pelo usuário. Obs: Esse script foi feito com base em um trabalho da faculdade de Análise e Desenvolvimento de Sistemas.
