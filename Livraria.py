@@ -13,13 +13,24 @@ def gerar_id():
     return id_global
 
 #função para cadastro dos livros
-def cadastrar_livro():
+
+def cadastrar_livro(id_do_livro_a_ser_cadastrado): #
     print('-' * 15, 'MENU CADASTRAR LIVRO', '-' * 24)
-    print(f'Id do livro: {gerar_id()}') #mostra o id que foi gerado
-    global nome_livro, auto_livro, editora
-    nome_livro = input('Entre com o nome do livro: ') #pede para o usuario digitar o nome do livro
-    auto_livro = input('Entre com o autor do livro: ') #pede para o usuario digitar o autor do livro
-    editora = input('Entre com a editora do livro: ') #pede pro usuario digitar a editora do livro
+    print(f'Id do livro: {id_do_livro_a_ser_cadastrado}')
+
+    nome_livro_local = input('Entre com o nome do livro: ')
+
+    auto_livro_local = input('Entre com o autor do livro: ')
+
+    editora_local = input('Entre com a editora do livro: ')
+
+    livro_cadastrado = { #dicionario para armazenar informações
+        'ID': id_do_livro_a_ser_cadastrado,
+        'Nome': nome_livro_local,
+        'Autor': auto_livro_local,
+        'Editora': editora_local,
+    }
+    return livro_cadastrado #retorna o dicionario para o programa principal
 
 # funcao para consulta de livro com if e elif para verificar qual numero usuario digitou
 def consultar_livro():
@@ -35,8 +46,8 @@ def consultar_livro():
     elif consulta == '2':
         id_busca = int(input("Digite o ID do livro: ")) # consulta os livros por ID
         realce()
-        for livro in lista_livro:
-            if livro['ID'] == id_busca:
+        for livro in lista_livro: #for para percorrer os livros na variavel lista_livro
+            if livro['ID'] == id_busca: # se livro foi igual ao id digitado ele mostra o livro
                 listar_livros([livro])
                 break
         else:
@@ -103,15 +114,11 @@ while True:
 #bloco de codigo para verificar as escolhas do usuario
     if escolha == 1:
         realce()
-        cadastrar_livro() # chama a função para cadastro do livro
-        # variavel da lista e dicionario
+        id_para_o_proximo_livro = gerar_id()  # Gera o ID antes de chamar cadastrar_livro
+        novo_livro_dados = cadastrar_livro(id_para_o_proximo_livro)  # Passa o ID gerado para a função
+        lista_livro.append(novo_livro_dados)
         realce()
-        # adicionando as informações do livro ao dicionario
-        dicionario_de_livros['Nome'] = nome_livro #atribui o nome inserido ao livro
-        dicionario_de_livros['Autor'] = auto_livro #atribui o auto inserido ao livro
-        dicionario_de_livros['Editora'] = editora #atribui a editora inserida ao livro
-        dicionario_de_livros['ID'] = id_global # atribui o id gerado ao livro
-        lista_livro.append(dicionario_de_livros.copy()) # copiando o conteudo do dicionario para uma lista
+        print(f"Livro '{novo_livro_dados['Nome']}' cadastrado com sucesso!")
     elif escolha == 2:
         realce()
         consultar_livro() # chama a função para consultar o livro
@@ -124,5 +131,3 @@ while True:
         break
     else:
         print("Opção inválida tente novamente.")
-
-
