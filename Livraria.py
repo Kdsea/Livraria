@@ -107,18 +107,21 @@ while True:
               '1 - Cadastrar Livro\n'
               '2 - Consultar Livro(s)\n'
               '3 - Remover Livro\n'
-              '4 - Sair\n'))
-    except ValueError: #trata o erro caso o usuario digite um valor invalido
+              '4 - Sair\n'
+                ">> "))
+    except: #trata o erro caso o usuario digite um valor invalido
         print("Opção inválida.")
+        continue
 
 #bloco de codigo para verificar as escolhas do usuario
+
     if escolha == 1:
-        realce()
-        id_para_o_proximo_livro = gerar_id()  # Gera o ID antes de chamar cadastrar_livro
-        novo_livro_dados = cadastrar_livro(id_para_o_proximo_livro)  # Passa o ID gerado para a função
-        lista_livro.append(novo_livro_dados)
-        realce()
-        print(f"Livro '{novo_livro_dados['Nome']}' cadastrado com sucesso!")
+            realce()
+            id_para_o_proximo_livro = gerar_id()  # Gera o ID antes de chamar cadastrar_livro
+            novo_livro_dados = cadastrar_livro(id_para_o_proximo_livro)  # Passa o ID gerado para a função
+            lista_livro.append(novo_livro_dados)
+            realce()
+            print(f"Livro '{novo_livro_dados['Nome']}' cadastrado com sucesso!")
     elif escolha == 2:
         realce()
         consultar_livro() # chama a função para consultar o livro
@@ -131,5 +134,7 @@ while True:
         break
     else:
         print("Opção inválida tente novamente.")
+
+
 
 
