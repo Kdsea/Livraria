@@ -88,7 +88,7 @@ def remover_livro():
                 return
         print("Livro com esse ID não encontrado.")
     except ValueError: # tratação de erro caso o usuario digite um valor invalido
-        print("ID inválido.")
+        print("Por favor digite um id existente!")
 
 #programa principal
 
@@ -110,7 +110,7 @@ while True:
               '4 - Sair\n'
                 ">> "))
     except: #trata o erro caso o usuario digite um valor invalido
-        print("Opção inválida.")
+        print("Digite um valor de 1 a 4, por favor tente novamente!")
         continue
 
 #bloco de codigo para verificar as escolhas do usuario
