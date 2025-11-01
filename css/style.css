@@ -1,20 +1,40 @@
-/*----CABEÇALHO----*/
+/*----MENU PRINCIPAL----*/
+
+/*----cabeçalho----*/
 
 .header-container{    
     display: flex;
-    justify-content: center;
+    justify-content: space-between; /* Alinha itens com espaço entre eles */
+    align-items: center;            /* Centraliza verticalmente */
     padding: 16px 32px; 
     background-color: #212f3b;            
     box-shadow: 0 2px 5px rgba(31, 35, 49, 0.5);
-    
 }
 
 #header-title{
     color: white;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-right: 425px;
 }
 
-/*----CORPO----*/
+.back-button{
+    background-color: #364d61;
+    color: white;
+    height: 40px;
+    width: 90px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-family: "Inter", sans-serif;
+    font-weight: bold;
+}
+
+.back-button:hover{
+    background-color: #486580;
+}
+
+/*----corpo----*/
 
 body{
     margin: 0;
@@ -78,14 +98,6 @@ a{
 
 .button-container-1:hover{
     background-color: #384f63;
-    display: flex;
-    justify-content: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border-radius: 15px;
-    width: 400px;
-    cursor: pointer;
-    text-decoration: none;
 }
 
 .button-container-2{
@@ -103,14 +115,6 @@ a{
 
 .button-container-2:hover{
     background-color: #384f63;
-    display: flex;
-    justify-content: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border-radius: 15px;
-    width: 400px;
-    cursor: pointer;
-    text-decoration: none;
 }
 
 .button-container-3{
@@ -128,14 +132,6 @@ a{
 
 .button-container-3:hover{
     background-color: #384f63;
-    display: flex;
-    justify-content: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border-radius: 15px;
-    width: 400px;
-    cursor: pointer;
-    text-decoration: none;
 }
 
 .button-container-4{
@@ -153,17 +149,47 @@ a{
 
 .button-container-4:hover{
     background-color: #384f63;
-    display: flex;
-    justify-content: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border-radius: 15px;
-    width: 400px;
-    cursor: pointer;
-    text-decoration: none;
 }
 
+/*----ADICIONAR, REMOVER, LISTAR E CONSULTAR LIVROS----*/
 
 
-/*----RODAPÉ----*/
+.text-boxes{
+    background-color: #121b24;
+    width: 620px;
+    height: 376px;
+    border-radius: 10px;
+}
+
+.input-style, .textarea-style {
+    width: 90%;          /* reduz largura para 80% do container */
+    padding: 8px;        
+    margin: 25px auto;    /* centraliza com margem automática */
+    display: block;      /* permite centralizar */
+    border: 1px solid #384f63;
+    border-radius: 4px;
+    color: white;
+    background: #212f3b;
+    font-family: "Inter", sans-serif;
+}
+
+.submit-button {
+    background-color: #212f3b;
+    color: white;
+    width: 50%;
+    height: 14%;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 8px;        
+    margin: 45px auto;    /* centraliza com margem automática */
+    display: block;      /* permite centralizar */
+    font-family: "Inter", sans-serif;
+    font-weight: bold;
+}
+
+.submit-button:hover {
+    background-color: #384f63;
+}
 
