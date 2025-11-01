@@ -189,6 +189,11 @@ a{
     transition: all 0.3s ease;
 }
 
+.input-style.invalid {
+    border-color: rgba(255, 0, 0, 0.5) !important;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
+}
+
 .input-style:focus {
     outline: none;
     background: rgba(33, 47, 59, 0.8);
@@ -237,6 +242,18 @@ a{
     box-shadow: 
         0 8px 12px rgba(0, 0, 0, 0.4),
         0 1px 3px rgba(255, 255, 255, 0.2) inset;
+}
+
+.book-list-container{
+    background-color: rgba(18, 27, 36, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    width: 93%;
+    height: 90vh;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    padding: 20px;
 }
 
 /* Media Queries para responsividade */
