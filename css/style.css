@@ -3,12 +3,19 @@
 /*----cabeçalho----*/
 
 .header-container{    
-    display: flex;
-    justify-content: space-between; /* Alinha itens com espaço entre eles */
-    align-items: center;            /* Centraliza verticalmente */
+   display: flex;
+    justify-content: space-between;
+    align-items: center;            
     padding: 16px 32px; 
-    background-color: #212f3b;            
-    box-shadow: 0 2px 5px rgba(31, 35, 49, 0.5);
+    background-color: rgba(33, 47, 59, 0.8); /* Mais transparente */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 
+        0 4px 16px rgba(0, 0, 0, 0.4),
+        0 1px 3px rgba(255, 255, 255, 0.1) inset;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    z-index: 100; /* Garante que o cabeçalho fique acima de outros elementos */
 }
 
 #header-title{
@@ -17,28 +24,47 @@
     margin-right: 425px;
 }
 
-.back-button{
-    background-color: #364d61;
+.back-button {
+    background-color: rgba(54, 77, 97, 0.8);
     color: white;
     height: 40px;
     width: 90px;
     border: none;
-    border-radius: 4px;
-    cursor: pointer;
     border-radius: 10px;
+    cursor: pointer;
     font-family: "Inter", sans-serif;
     font-weight: bold;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    box-shadow: 
+        0 4px 6px rgba(0, 0, 0, 0.3),
+        0 1px 3px rgba(255, 255, 255, 0.1) inset;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
 }
 
-.back-button:hover{
-    background-color: #486580;
+.back-button:hover {
+    background-color: rgba(72, 101, 128, 0.9);
+    transform: translateY(-2px);
+    box-shadow: 
+        0 6px 8px rgba(0, 0, 0, 0.4),
+        0 1px 3px rgba(255, 255, 255, 0.2) inset;
+}
+
+.back-button:active {
+    transform: translateY(1px);
+    box-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.2),
+        0 1px 3px rgba(255, 255, 255, 0.1) inset;
 }
 
 /*----corpo----*/
 
 body{
     margin: 0;
-    background-color: #101418;
+    min-height: 100vh;
+    background: radial-gradient(circle at center, #1a2632 0%, #101418 100%);
+
 }
 
 .titles-livraria{
@@ -62,11 +88,15 @@ h3{
     align-items: center;
 }
 
-.select-option-text-container{
-    background-color: #121b24;
+.select-option-text-container {
+    background-color: rgba(18, 27, 36, 0.7); /* Cor de fundo com transparência */
+    backdrop-filter: blur(10px);             /* Efeito de blur no fundo */
+    -webkit-backdrop-filter: blur(10px);     /* Para suporte Safari */
     width: 620px;
     height: 376px;
     border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Borda sutil */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
 a{
@@ -83,103 +113,93 @@ a{
     gap: 30px;
 }
 
-.button-container-1{
-    background-color: #212f3b;
+.button-container-1, .button-container-2, .button-container-3, .button-container-4 {
+    background-color: rgba(33, 47, 59, 0.8);
     display: flex;
     justify-content: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    box-shadow: 0 2px 5px rgba(31, 35, 49, 0.5);
+    align-items: center;
+    padding: 20px;
+    box-shadow: 
+        0 4px 6px rgba(0, 0, 0, 0.3),
+        0 1px 3px rgba(255, 255, 255, 0.1) inset;
     border-radius: 15px;
     width: 400px;
     cursor: pointer;
     text-decoration: none;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    font-weight: 500;
 }
 
-.button-container-1:hover{
-    background-color: #384f63;
+.button-container-1:hover, .button-container-2:hover, .button-container-3:hover, .button-container-4:hover {
+    background-color: rgba(56, 79, 99, 0.9);
+    transform: translateY(-2px);
+    box-shadow: 
+        0 8px 12px rgba(0, 0, 0, 0.4),
+        0 1px 3px rgba(255, 255, 255, 0.2) inset;
 }
 
-.button-container-2{
-    background-color: #212f3b;
-    display: flex;
-    justify-content: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    box-shadow: 0 2px 5px rgba(31, 35, 49, 0.5);
-    border-radius: 15px;
-    width: 400px;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-.button-container-2:hover{
-    background-color: #384f63;
-}
-
-.button-container-3{
-    background-color: #212f3b;
-    display: flex;
-    justify-content: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    box-shadow: 0 2px 5px rgba(31, 35, 49, 0.5);
-    border-radius: 15px;
-    width: 400px;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-.button-container-3:hover{
-    background-color: #384f63;
-}
-
-.button-container-4{
-    background-color: #212f3b;
-    display: flex;
-    justify-content: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    box-shadow: 0 2px 5px rgba(31, 35, 49, 0.5);
-    border-radius: 15px;
-    width: 400px;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-.button-container-4:hover{
-    background-color: #384f63;
+.button-container-1:active, .button-container-2:active, .button-container-3:active, .button-container-4:active {
+    transform: translateY(1px);
+    box-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.2),
+        0 1px 3px rgba(255, 255, 255, 0.1) inset;
 }
 
 /*----ADICIONAR, REMOVER, LISTAR E CONSULTAR LIVROS----*/
 
 
-.text-boxes{
-    background-color: #121b24;
+.text-boxes {
+    background-color: rgba(18, 27, 36, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     width: 620px;
     height: 376px;
     border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    padding: 20px;
 }
 
-.input-style, .textarea-style {
-    width: 90%;          /* reduz largura para 80% do container */
-    padding: 8px;        
-    margin: 25px auto;    /* centraliza com margem automática */
-    display: block;      /* permite centralizar */
-    border: 1px solid #384f63;
-    border-radius: 4px;
+.input-style {
+    width: 90%;
+    padding: 12px 16px;
+    margin: 25px auto;
+    display: block;
+    background: rgba(33, 47, 59, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
     color: white;
-    background: #212f3b;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    box-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.1),
+        0 1px 3px rgba(255, 255, 255, 0.1) inset;
+    transition: all 0.3s ease;
+}
+
+.input-style:focus {
+    outline: none;
+    background: rgba(33, 47, 59, 0.8);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 
+        0 4px 8px rgba(0, 0, 0, 0.2),
+        0 1px 3px rgba(255, 255, 255, 0.2) inset;
+    transform: translateY(-1px);
+}
+
+.input-style::placeholder {
+    color: rgba(255, 255, 255, 0.5);
     font-family: "Inter", sans-serif;
 }
-
 .submit-button {
     background-color: #212f3b;
     color: white;
-    width: 50%;
-    height: 14%;
     border: none;
-    border-radius: 4px;
     cursor: pointer;
     border-radius: 10px;
     padding: 8px;        
@@ -187,9 +207,28 @@ a{
     display: block;      /* permite centralizar */
     font-family: "Inter", sans-serif;
     font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 
+        0 4px 6px rgba(0, 0, 0, 0.3),
+        0 1px 3px rgba(255, 255, 255, 0.1) inset;
+    border-radius: 15px;
+    width: 50%;
+    height: 14%;
+    text-decoration: none;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    font-weight: 500;
+    
 }
 
 .submit-button:hover {
-    background-color: #384f63;
+    background-color: rgba(56, 79, 99, 0.9);
+    transform: translateY(-2px);
+    box-shadow: 
+        0 8px 12px rgba(0, 0, 0, 0.4),
+        0 1px 3px rgba(255, 255, 255, 0.2) inset;
 }
 
