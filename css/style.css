@@ -258,7 +258,6 @@ a{
 
 /* Media Queries para responsividade */
 @media screen and (max-width: 768px) {
-    /* ...existing code for header... */
 
     .select-option-text-container,
     .text-boxes {
@@ -298,7 +297,6 @@ a{
 }
 
 @media screen and (max-width: 480px) {
-    /* ...existing code for header... */
 
     .select-option-text-container,
     .text-boxes {
